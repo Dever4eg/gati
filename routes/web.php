@@ -11,10 +11,15 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
+//Route::get('/schedule', 'ScheduleController@index');
+
+Route::get('/news/{id}', 'NewsController@show');
+Route::get('/news', 'NewsController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
