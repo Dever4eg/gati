@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/posts', "ApiController@posts");
 Route::get('/posts/{slug}', "ApiController@post");
 
-//Route::get('/schedule', "ApiController@schedules");
-//Route::get('/schedule/{id}', "ApiController@schedule");
+Route::get('/schedule', "ApiController@schedules");
+Route::get('/schedule/{id}', "ApiController@schedule");

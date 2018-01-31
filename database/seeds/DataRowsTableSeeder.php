@@ -18,6 +18,11 @@ class DataRowsTableSeeder extends Seeder
         $menuDataType = DataType::where('slug', 'menus')->firstOrFail();
         $roleDataType = DataType::where('slug', 'roles')->firstOrFail();
 
+        // Custom
+        $scheduleDataType = DataType::where('slug', 'schedules')->firstOrFail();
+
+
+
         $dataRow = $this->dataRow($postDataType, 'id');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -927,6 +932,93 @@ class DataRowsTableSeeder extends Seeder
                 'order'        => 9,
             ])->save();
         }
+
+        //---------------------------
+        //    Custom
+        //---------------------------
+
+        //schedules
+
+        $dataRow = $this->dataRow($scheduleDataType, 'id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleDataType, 'path_img');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => 'Path img',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleDataType, 'date');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'date',
+                'display_name' => 'Date',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Created at',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 0,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 4,
+            ])->save();
+        }    
+
+        $dataRow = $this->dataRow($scheduleDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Updated at',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 5,
+            ])->save();
+        }                
+
     }
 
     /**

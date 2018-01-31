@@ -208,6 +208,29 @@ class MenuItemsTableSeeder extends Seeder
                     'order'      => 14,
                 ])->save();
             }
+
+
+            //---------------------------
+            //    Custom
+            //---------------------------
+
+            // schedules
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Schedules',
+                'url'     => '/admin/schedules',
+                'route'   => 'voyager.schedules.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-window-list',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 15,
+                ])->save();
+            }
         }
     }
 }

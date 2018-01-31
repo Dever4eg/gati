@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('main');
 });
 
-//Route::get('/schedule', 'ScheduleController@index');
+Route::get('/schedule', 'ScheduleController@index');
 
 Route::get('/news/{id}', 'NewsController@show');
 Route::get('/news', 'NewsController@index');
