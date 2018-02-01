@@ -11,4 +11,5 @@
     <div class="text-center">
         {{$news->links()}}
     </div>
+    
 @endsection
