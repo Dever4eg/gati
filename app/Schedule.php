@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
-//    public function ScheduleTypes(){
-//        return $this->belongsTo('App\ScheduleType');
-//    }
+    public function Type(){
+        return $this->belongsTo('App\ScheduleType', 'schedule_types_id');
+    }
 }
