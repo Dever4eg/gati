@@ -20,6 +20,7 @@ class DataRowsTableSeeder extends Seeder
 
         // Custom
         $scheduleDataType = DataType::where('slug', 'schedules')->firstOrFail();
+        $scheduleTypeDataType = DataType::where('slug', 'schedule-types')->firstOrFail();
 
 
 
@@ -937,6 +938,73 @@ class DataRowsTableSeeder extends Seeder
         //    Custom
         //---------------------------
 
+        //schedule-type
+
+        $dataRow = $this->dataRow($scheduleTypeDataType, 'id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+
+        $dataRow = $this->dataRow($scheduleTypeDataType, 'type_name');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Type Name',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleTypeDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Created At',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleTypeDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Updated At',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 4,
+            ])->save();
+        }
+
         //schedules
 
         $dataRow = $this->dataRow($scheduleDataType, 'id');
@@ -1017,7 +1085,39 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => '',
                 'order'        => 5,
             ])->save();
-        }                
+        }
+
+        $dataRow = $this->dataRow($scheduleDataType, 'schedule_types_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Schedule Types Id',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($scheduleDataType, 'schedule_belongsto_schedule_type_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => 'schedule_types',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '{"model":"App\\\\ScheduleType","table":"schedule_types","type":"belongsTo","column":"schedule_types_id","key":"id","label":"type_name","pivot_table":"categories","pivot":"0"}',
+                'order'        => 7 ,
+            ])->save();
+        }
 
     }
 

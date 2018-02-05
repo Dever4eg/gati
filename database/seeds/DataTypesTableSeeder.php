@@ -100,6 +100,21 @@ class DataTypesTableSeeder extends Seeder
         //    Custom
         //---------------------------
 
+        // schedule-types
+        $dataType = $this->dataType('slug', 'schedule-types');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'schedule_types',
+                'display_name_singular' => 'Schedule Type',
+                'display_name_plural'   => 'Schedule Type',
+                'icon'                  => '',
+                'model_name'            => 'App\ScheduleType',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
         // schedules
         $dataType = $this->dataType('slug', 'schedules');
         if (!$dataType->exists) {

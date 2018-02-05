@@ -38,6 +38,8 @@ class PermissionsTableSeeder extends Seeder
 
         Permission::generateFor('settings');
 
+        //Custom
         Permission::generateFor('schedules');
+        Permission::generateFor('schedule_types');
     }
 }

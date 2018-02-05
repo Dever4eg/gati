@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSchedulesTable extends Migration
+class CreateScheduleTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateSchedulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('schedules', function (Blueprint $table) {
+        Schema::create('schedule_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->text("path_img");
-            $table->integer('schedule_types_id');
-            $table->date("date");
+            $table->text("type_name");
             $table->timestamps();
         });
-
-        
     }
 
     /**
@@ -31,6 +27,6 @@ class CreateSchedulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('schedule_types');
     }
 }
