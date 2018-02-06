@@ -10,7 +10,7 @@
 
 
     @forelse($types as $item)
-        <p class="text-center"> {{ $item->type_name }} </p>
+        <hp class="text-center"> {{ $item->type_name }} </hp>
     @empty
         <h3>Записи отсутствуют</h3>
     @endforelse

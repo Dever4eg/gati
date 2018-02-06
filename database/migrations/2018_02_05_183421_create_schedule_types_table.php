@@ -17,6 +17,7 @@ class CreateScheduleTypesTable extends Migration
             $table->increments('id');
             $table->text("type_name");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
