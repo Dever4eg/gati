@@ -20,7 +20,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Dashboard',
+                'title'   => 'Панель управління',
                 'url'     => '',
                 'route'   => 'voyager.dashboard',
             ]);
@@ -36,7 +36,55 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Media',
+                'title'   => 'Записи',
+                'url'     => '',
+                'route'   => 'voyager.posts.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-news',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 2,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Категорії',
+                'url'     => '',
+                'route'   => 'voyager.categories.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-categories',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 3,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Сторінки',
+                'url'     => '',
+                'route'   => 'voyager.pages.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-file-text',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 4,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Медіа файли',
                 'url'     => '',
                 'route'   => 'voyager.media.index',
             ]);
@@ -50,25 +98,79 @@ class MenuItemsTableSeeder extends Seeder
                 ])->save();
             }
 
-            $menuItem = MenuItem::firstOrNew([
+
+            // schedule parent
+
+            $scheduleMenuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Posts',
+                'title'   => 'Розклад',
                 'url'     => '',
-                'route'   => 'voyager.posts.index',
+                'route'   => '',
             ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
+            if (!$scheduleMenuItem->exists) {
+                $scheduleMenuItem->fill([
                     'target'     => '_self',
-                    'icon_class' => 'voyager-news',
+                    'icon_class' => 'voyager-window-list',
                     'color'      => null,
                     'parent_id'  => null,
                     'order'      => 6,
                 ])->save();
             }
 
+            // schedules
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Users',
+                'title'   => 'Список',
+                'url'     => '/admin/schedules',
+                'route'   => 'voyager.schedules.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => '',
+                    'color'      => null,
+                    'parent_id'  => $scheduleMenuItem->id,
+                    'order'      => 7,
+                ])->save();
+            }
+
+            // schedule types
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Типи',
+                'url'     => '/admin/schedule-types',
+                'route'   => 'voyager.schedule-types.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => '',
+                    'color'      => null,
+                    'parent_id'  => $scheduleMenuItem->id,
+                    'order'      => 8 ,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Меню',
+                'url'     => '',
+                'route'   => 'voyager.menus.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-list',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 9,
+                ])->save();
+            }
+
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Користувачі',
                 'url'     => '',
                 'route'   => 'voyager.users.index',
             ]);
@@ -78,45 +180,14 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-person',
                     'color'      => null,
                     'parent_id'  => null,
-                    'order'      => 3,
+                    'order'      => 10,
                 ])->save();
             }
 
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id' => $menu->id,
-                'title'   => 'Categories',
-                'url'     => '',
-                'route'   => 'voyager.categories.index',
-            ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
-                    'target'     => '_self',
-                    'icon_class' => 'voyager-categories',
-                    'color'      => null,
-                    'parent_id'  => null,
-                    'order'      => 8,
-                ])->save();
-            }
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Pages',
-                'url'     => '',
-                'route'   => 'voyager.pages.index',
-            ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
-                    'target'     => '_self',
-                    'icon_class' => 'voyager-file-text',
-                    'color'      => null,
-                    'parent_id'  => null,
-                    'order'      => 7,
-                ])->save();
-            }
-
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id' => $menu->id,
-                'title'   => 'Roles',
+                'title'   => 'Ролі',
                 'url'     => '',
                 'route'   => 'voyager.roles.index',
             ]);
@@ -126,13 +197,13 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-lock',
                     'color'      => null,
                     'parent_id'  => null,
-                    'order'      => 2,
+                    'order'      => 11,
                 ])->save();
             }
 
             $toolsMenuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Tools',
+                'title'   => 'Інструменти',
                 'url'     => '',
             ]);
             if (!$toolsMenuItem->exists) {
@@ -141,29 +212,15 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-tools',
                     'color'      => null,
                     'parent_id'  => null,
-                    'order'      => 9,
+                    'order'      => 12,
                 ])->save();
             }
 
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id' => $menu->id,
-                'title'   => 'Menu Builder',
-                'url'     => '',
-                'route'   => 'voyager.menus.index',
-            ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
-                    'target'     => '_self',
-                    'icon_class' => 'voyager-list',
-                    'color'      => null,
-                    'parent_id'  => $toolsMenuItem->id,
-                    'order'      => 10,
-                ])->save();
-            }
+
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Database',
+                'title'   => 'База даних',
                 'url'     => '',
                 'route'   => 'voyager.database.index',
             ]);
@@ -173,13 +230,13 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-data',
                     'color'      => null,
                     'parent_id'  => $toolsMenuItem->id,
-                    'order'      => 11,
+                    'order'      => 13,
                 ])->save();
             }
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Compass',
+                'title'   => 'Компас',
                 'url'     => '',
                 'route'   => 'voyager.compass.index',
             ]);
@@ -189,13 +246,13 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-compass',
                     'color'      => null,
                     'parent_id'  => $toolsMenuItem->id,
-                    'order'      => 12,
+                    'order'      => 14,
                 ])->save();
             }
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Settings',
+                'title'   => 'Налаштування',
                 'url'     => '',
                 'route'   => 'voyager.settings.index',
             ]);
@@ -205,32 +262,11 @@ class MenuItemsTableSeeder extends Seeder
                     'icon_class' => 'voyager-settings',
                     'color'      => null,
                     'parent_id'  => null,
-                    'order'      => 14,
-                ])->save();
-            }
-
-
-            //---------------------------
-            //    Custom
-            //---------------------------
-
-            // schedules
-
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id' => $menu->id,
-                'title'   => 'Schedules',
-                'url'     => '/admin/schedules',
-                'route'   => 'voyager.schedules.index',
-            ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
-                    'target'     => '_self',
-                    'icon_class' => 'voyager-window-list',
-                    'color'      => null,
-                    'parent_id'  => null,
                     'order'      => 15,
                 ])->save();
             }
+
+
         }
     }
 }
