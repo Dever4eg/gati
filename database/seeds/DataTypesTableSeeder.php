@@ -14,8 +14,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'posts',
-                'display_name_singular' => 'Post',
-                'display_name_plural'   => 'Posts',
+                'display_name_singular' => 'Запис',
+                'display_name_plural'   => 'Записи',
                 'icon'                  => 'voyager-news',
                 'model_name'            => 'TCG\\Voyager\\Models\\Post',
                 'policy_name'           => 'TCG\\Voyager\\Policies\\PostPolicy',
@@ -29,8 +29,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'pages',
-                'display_name_singular' => 'Page',
-                'display_name_plural'   => 'Pages',
+                'display_name_singular' => 'Сторінка',
+                'display_name_plural'   => 'Сторінки',
                 'icon'                  => 'voyager-file-text',
                 'model_name'            => 'TCG\\Voyager\\Models\\Page',
                 'controller'            => '',
@@ -43,8 +43,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'users',
-                'display_name_singular' => 'User',
-                'display_name_plural'   => 'Users',
+                'display_name_singular' => 'Користувач',
+                'display_name_plural'   => 'Користувачі',
                 'icon'                  => 'voyager-person',
                 'model_name'            => 'TCG\\Voyager\\Models\\User',
                 'policy_name'           => 'TCG\\Voyager\\Policies\\UserPolicy',
@@ -58,8 +58,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'slug'                  => 'categories',
-                'display_name_singular' => 'Category',
-                'display_name_plural'   => 'Categories',
+                'display_name_singular' => 'Категорія',
+                'display_name_plural'   => 'Категорії',
                 'icon'                  => 'voyager-categories',
                 'model_name'            => 'TCG\\Voyager\\Models\\Category',
                 'controller'            => '',
@@ -72,8 +72,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'menus',
-                'display_name_singular' => 'Menu',
-                'display_name_plural'   => 'Menus',
+                'display_name_singular' => 'Меню',
+                'display_name_plural'   => 'Меню',
                 'icon'                  => 'voyager-list',
                 'model_name'            => 'TCG\\Voyager\\Models\\Menu',
                 'controller'            => '',
@@ -86,8 +86,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'roles',
-                'display_name_singular' => 'Role',
-                'display_name_plural'   => 'Roles',
+                'display_name_singular' => 'Роль',
+                'display_name_plural'   => 'Ролі',
                 'icon'                  => 'voyager-lock',
                 'model_name'            => 'TCG\\Voyager\\Models\\Role',
                 'controller'            => '',
@@ -105,8 +105,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'schedule_types',
-                'display_name_singular' => 'Schedule Type',
-                'display_name_plural'   => 'Schedule Type',
+                'display_name_singular' => 'Тип розкладу',
+                'display_name_plural'   => 'Типи розкладу',
                 'icon'                  => '',
                 'model_name'            => 'App\ScheduleType',
                 'controller'            => '',
@@ -120,8 +120,8 @@ class DataTypesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'schedules',
-                'display_name_singular' => 'Schedule',
-                'display_name_plural'   => 'Schedules',
+                'display_name_singular' => 'Розклад',
+                'display_name_plural'   => 'Розклади',
                 'icon'                  => '',
                 'model_name'            => 'App\\Schedule',
                 'controller'            => '',

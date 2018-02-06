@@ -44,7 +44,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Author',
+                'display_name' => 'Автор',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -60,7 +60,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Category',
+                'display_name' => 'Категорія',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -76,7 +76,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Title',
+                'display_name' => 'Заголовок',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -92,7 +92,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text_area',
-                'display_name' => 'excerpt',
+                'display_name' => 'Уривок',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -108,7 +108,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'rich_text_box',
-                'display_name' => 'Body',
+                'display_name' => 'Тіло',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -124,7 +124,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => 'Post Image',
+                'display_name' => 'Зображення',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -217,7 +217,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
-                'display_name' => 'status',
+                'display_name' => 'статус',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -240,7 +240,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -256,7 +256,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -288,7 +288,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'author_id',
+                'display_name' => 'Автор',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -304,7 +304,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'title',
+                'display_name' => 'Заголовок',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -320,7 +320,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text_area',
-                'display_name' => 'excerpt',
+                'display_name' => 'Уривок',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -336,7 +336,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'rich_text_box',
-                'display_name' => 'body',
+                'display_name' => 'Тіло',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -404,7 +404,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
-                'display_name' => 'status',
+                'display_name' => 'Статус',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -426,7 +426,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -442,7 +442,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -458,7 +458,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => 'image',
+                'display_name' => 'Зображення',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -490,7 +490,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'name',
+                'display_name' => 'Ім\'я',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -506,7 +506,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'email',
+                'display_name' => 'Почта',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -522,7 +522,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'password',
-                'display_name' => 'password',
+                'display_name' => 'Пароль',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -538,7 +538,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'relationship',
-                'display_name' => 'Role',
+                'display_name' => 'Роль',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -554,7 +554,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'remember_token',
+                'display_name' => 'токен',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -570,7 +570,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -586,7 +586,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -602,7 +602,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => 'avatar',
+                'display_name' => 'Аватар',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -634,7 +634,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'name',
+                'display_name' => 'Назва',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -650,7 +650,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -666,7 +666,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -724,7 +724,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'order',
+                'display_name' => 'Порядковий номер',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -742,7 +742,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'name',
+                'display_name' => 'Назва',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -778,7 +778,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -794,7 +794,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -826,7 +826,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Name',
+                'display_name' => 'name',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -842,7 +842,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'created_at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -858,7 +858,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'updated_at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -874,7 +874,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Display Name',
+                'display_name' => 'Назва',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -922,7 +922,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'role_id',
+                'display_name' => 'Роль',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -961,7 +961,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Type Name',
+                'display_name' => 'Назва',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -977,7 +977,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created At',
+                'display_name' => 'Сторено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -993,7 +993,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated At',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -1010,7 +1010,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Deleted At',
+                'display_name' => 'Видалено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -1044,7 +1044,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => 'Path img',
+                'display_name' => 'Зображення',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -1060,7 +1060,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'date',
-                'display_name' => 'Date',
+                'display_name' => 'Дата',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -1076,7 +1076,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created at',
+                'display_name' => 'Створено',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -1092,7 +1092,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated at',
+                'display_name' => 'Змінено',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -1124,7 +1124,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'relationship',
-                'display_name' => 'schedule_types',
+                'display_name' => 'Тип',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,

@@ -10,41 +10,7 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        $setting = $this->findSetting('site.title');
-        if (!$setting->exists) {
-            $setting->fill([
-                'display_name' => 'Site Title',
-                'value'        => 'Site Title',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 1,
-                'group'        => 'Site',
-            ])->save();
-        }
 
-        $setting = $this->findSetting('site.description');
-        if (!$setting->exists) {
-            $setting->fill([
-                'display_name' => 'Site Description',
-                'value'        => 'Site Description',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 2,
-                'group'        => 'Site',
-            ])->save();
-        }
-
-        $setting = $this->findSetting('site.logo');
-        if (!$setting->exists) {
-            $setting->fill([
-                'display_name' => 'Site Logo',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'image',
-                'order'        => 3,
-                'group'        => 'Site',
-            ])->save();
-        }
 
         $setting = $this->findSetting('site.google_analytics_tracking_id');
         if (!$setting->exists) {
@@ -74,7 +40,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => 'Admin Title',
-                'value'        => 'Voyager',
+                'value'        => 'Гаті',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,
@@ -86,7 +52,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => 'Admin Description',
-                'value'        => 'Welcome to Voyager. The Missing Admin for Laravel',
+                'value'        => 'Адміністративна пенель ГАТІ',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 2,
