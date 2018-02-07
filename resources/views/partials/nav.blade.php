@@ -17,6 +17,8 @@
             <li><a href="/schedule">Розклад</a></li>
             <li><a href="/news">Новости</a></li>
         </ul>
+
+        {{ menu('main', 'bootstrap') }}
         
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/admin">Админ панель</a></li>

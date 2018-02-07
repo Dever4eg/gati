@@ -21,8 +21,8 @@ class MenuItemsTableSeeder extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'На сайт',
-                'url'     => '/',
-                'route'   => '',
+                'url'     => '',
+                'route'   => 'main',
             ]);
             if (!$menuItem->exists) {
                 $menuItem->fill([

@@ -354,7 +354,7 @@ class DataRowsTableSeeder extends Seeder
                 'type'         => 'text',
                 'display_name' => 'slug',
                 'required'     => 1,
-                'browse'       => 0,
+                'browse'       => 1,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,

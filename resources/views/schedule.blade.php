@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <!-- <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad4.png" alt="">
+    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad4.png" alt="">
     <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad3.png" alt="">
     <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad2.png" alt="">
     <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad1.png" alt="">
-    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad.png" alt=""> -->
+    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad.png" alt="">
 
 
     @forelse($types as $item)
