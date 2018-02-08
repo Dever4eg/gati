@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/schedule', 'ScheduleController@index');
 Route::get('/news/{id}', 'NewsController@show');
 Route::get('/news', 'NewsController@index');
-
+Route::get('/pages/{slug}', 'PageController@show');
 
 // Admin
 Route::group(['prefix' => 'admin'], function () {
