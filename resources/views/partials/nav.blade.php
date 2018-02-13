@@ -16,6 +16,7 @@
         <ul class="nav navbar-nav">
             <li><a href="/schedule">Розклад</a></li>
             <li><a href="/news">Новости</a></li>
+            <li><a href="/api">api</a></li>
         </ul>
 
         {{ menu('main', 'bootstrap') }}
