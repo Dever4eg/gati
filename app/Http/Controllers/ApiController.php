@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ScheduleType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use TCG\Voyager\Models\Post;
@@ -23,8 +24,19 @@ class ApiController extends Controller
         return Schedule::orderBy('created_at', 'desc')->paginate(10);
     }
 
-    public function schedule($id) {
-        return Schedule::find($id);
+    public function schedule($slug) {
+        $schedule = Schedule::where('date', $slug)->first();
+        $schedule = $schedule ? $schedule : Schedule::find($slug);
+        return response()->json($schedule);
     }
+
+    public function scheduleTypes() {
+        return ScheduleType::orderBy('created_at', 'desc')->paginate(10);
+    }
+
+    public function scheduleType($id) {
+        return ScheduleType::find($id);
+    }
+
 
 }
