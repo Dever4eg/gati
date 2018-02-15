@@ -21,7 +21,7 @@
 
         <header>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 nopadding-xs">
 					<div class="title">
 						<a href="/"> <h1 class="text-center ">Глухівський агротехнічний інститут імені С.А. Ковпака Сумського НАУ </h1> </a>
 					</div>
@@ -29,13 +29,13 @@
 			</div>
 
 			<div class="row hidden-xs">
-				<div class="col-md-12">
+				<div class="col-md-12 nopadding-xs">
 					@include('partials.slider')
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 nopadding-xs">
 					@include('partials.nav')
 				</div>
 			</div>
@@ -43,17 +43,17 @@
 		</header>
 
 		<div class="row">
+
 			<div class="col-md-9">
 				<div class="content">
 					@yield('content')
 				</div>
 			</div>
-			<div class="row visible-xs">
-				<br>
-			</div>
-			<div class="col-md-3">
-				<div class="sidebar">
 
+			<div class="visible-xs" style="padding-bottom: 20px"></div>
+
+			<div class="col-md-3 nopadding-xs">
+				<div class="sidebar">
 
 					<ul class="nav">
 						<li>
@@ -116,21 +116,37 @@
 		<footer>
 			<div class="row kor-posil text-center">
 
-				<a href="http://www.president.gov.ua/" target="_blank" title="">
-					<img src="http://gatisnau.sumy.ua/web/images/kor_posil/1.png" alt="">    </a>
-				<a href="http://www.rada.gov.ua/" target="_blank" title="">
-					<img src="http://gatisnau.sumy.ua/web/images/kor_posil/2.png" alt="">    </a>
-				<a href="http://www.mon.gov.ua/" target="_blank" title="">
-					<img src="http://gatisnau.sumy.ua/web/images/kor_posil/3.png" alt="">    </a>
-				<a href="http://www.minagro.gov.ua/" target="_blank" title="">
-					<img src="http://gatisnau.sumy.ua/web/images/kor_posil/4.png" alt="">    </a>
-				<a href="http://sm.gov.ua/uk/oda" target="_blank" title="">
-					<img src="http://gatisnau.sumy.ua/web/images/kor_posil/5.png" alt="">    </a>
-				<a href="http://www.sau.sumy.ua/" target="_blank" title="">
-					<a href="http:/http://gatisnau.sumy.ua//www.agroosvita.com/" target="_blank" title="">
-						<img src="http://gatisnau.sumy.ua/web/images/kor_posil/7.png" alt="">    </a>
-					<a href="http://ukc.gov.ua/" target="_blank" title="">
-						<img src="http://gatisnau.sumy.ua/web/images/kor_posil/8.png" alt="">    </a>
+                <a href="http://www.president.gov.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/1.png" alt="">
+                </a>
+
+                <a href="http://www.rada.gov.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/2.png" alt="">
+                </a>
+
+                <a href="http://www.mon.gov.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/3.png" alt="">
+                </a>
+
+                <a href="http://www.minagro.gov.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/4.png" alt="">
+                </a>
+
+                <a href="http://sm.gov.ua/uk/oda" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/5.png" alt="">
+                </a>
+
+                <a href="http:/http://gatisnau.sumy.ua//www.agroosvita.com/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/7.png" alt="">
+                </a>
+
+                <a href="http://www.sau.sumy.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/6.png" alt="">
+                </a>
+
+                <a href="http://ukc.gov.ua/" target="_blank" title="">
+                    <img src="http://gatisnau.sumy.ua/web/images/kor_posil/8.png" alt="">
+                </a>
 			</div>
 			<p class="text-center">© Глухівський агротехнічний інститут імені С.А. Ковпака Сумського НАУ 2017</p>
 		</footer>

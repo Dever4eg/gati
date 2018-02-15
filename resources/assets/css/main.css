@@ -78,6 +78,9 @@
     padding-right: 20px;
 }
 
+.side-social {
+    padding-bottom: 10px;
+}
 .side-social img {
     width: 40px;
 }
@@ -87,9 +90,9 @@
 }
 
 .content {
-    border: solid 1px #ddd;
+
     border-radius: 4px;
-    padding: 10px;
+    background: #fdfdfd;
 }
 
 .kor-posil{
@@ -97,5 +100,32 @@
 }
 .kor-posil img{
     padding-right: 5px;
-    height: 55px;
+    height: 50px;
+}
+
+footer {
+    padding-top: 20px;
+}
+
+.content-panel {
+
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+
+.news a {
+    text-decoration: none;
+    color: #444;
+}
+
+
+@media (max-width: 768px) {
+    .nopadding-xs {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
