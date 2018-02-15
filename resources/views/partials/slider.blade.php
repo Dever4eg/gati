@@ -4,7 +4,6 @@
         <li data-target="#myCarousel" data-slide-to="0"></li>
         <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -19,10 +18,6 @@
 
         <div class="item">
             <img src="http://gatisnau.sumy.ua/images/slider/slide/3.jpg">
-        </div>
-
-        <div class="item">
-            <img src="https://www.sas.com/en_us/insights/big-data/what-is-big-data/_jcr_content/socialShareImage.img.png">
         </div>
 
 

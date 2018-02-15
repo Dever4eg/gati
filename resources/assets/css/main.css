@@ -25,3 +25,37 @@
 #myCarousel .item {
 	max-height: 300px;
 }
+
+.navbar {
+    background: #2E8B57;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+
+
+.navbar a {
+    color: #fff;
+}
+
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background: #3E9B67;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: #3E9B67;
+    border-color: red;
+}
+
+.dropdown-menu{
+    background: #2E8B57;
+    border: none;
+}
+
+.dropdown-menu>li>a{
+    color: #fff;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    background: #3E9B67;
+    color: #fff;
+}
