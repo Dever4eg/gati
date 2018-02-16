@@ -117,7 +117,7 @@ footer {
     margin-bottom: 20px;
 }
 
-.news a {
+.content-panel  a {
     text-decoration: none;
     color: #444;
 }
@@ -128,4 +128,9 @@ footer {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+}
+
+.news .btn {
+    background: #2E8B57;
+    color: #fff;
 }

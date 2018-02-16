@@ -9,6 +9,13 @@
                 <div class="col-sm-4">
                     <img class="img-responsive" src="{{ \Illuminate\Support\Facades\Storage::url($item->image)  }}" alt="">
                 </div>
+                <div class="col-md-8">
+                    {{ $item->excerpt }}
+                </div>
+                <div class="clearfix"></div>
+                <div>
+                    <a href="/news/{{$item->id}}" class="btn pull-right">Переглянути</a>
+                </div>
             </div>
         </div>
     @empty
