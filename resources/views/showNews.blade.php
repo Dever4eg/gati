@@ -16,7 +16,7 @@
 
         <div>
             <span class="pull-left">{{ date('d-m-Y', strtotime($news->created_at)) }}</span>
-            <span class="pull-right">Переглядів: {{ $news->featured }}</span>
+            <span class="pull-right">Переглядів: {{ $news->views }}</span>
         </div>
         <div class="clearfix"></div>
 

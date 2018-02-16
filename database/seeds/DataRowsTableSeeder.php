@@ -902,11 +902,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($postDataType, 'featured');
+        $dataRow = $this->dataRow($postDataType, 'views');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'checkbox',
-                'display_name' => 'featured',
+                'type'         => 'number',
+                'display_name' => 'views',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,

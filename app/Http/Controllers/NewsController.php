@@ -15,7 +15,7 @@ class NewsController extends Controller
 
     public function show($id){
         $news = Post::find($id);
-        $news->featured++;
+        $news->views++;
         $news->save();
 
         return view('showNews')->with('news', $news);
