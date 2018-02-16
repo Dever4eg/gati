@@ -11,7 +11,7 @@ use App\Schedule;
 class ApiController extends Controller
 {
     public function posts() {
-        return Post::orderBy('created_at', 'desc')->paginate(10);
+        return Post::where('status', 'PUBLISHED')->orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function post($slug) {

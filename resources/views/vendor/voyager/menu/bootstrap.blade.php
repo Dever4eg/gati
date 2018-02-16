@@ -45,11 +45,7 @@
 
 
 
-            if(url($item->link()) == url()->current()){
-                $listItemClass = 'dropdown active';
-            }else{
-                $listItemClass = 'dropdown';
-            }
+            $listItemClass = 'dropdown';
 
         }
 
