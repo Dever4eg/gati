@@ -316,21 +316,7 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($pageDataType, 'excerpt');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text_area',
-                'display_name' => 'Уривок',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => '',
-                'order'        => 4,
-            ])->save();
-        }
+
 
         $dataRow = $this->dataRow($pageDataType, 'body');
         if (!$dataRow->exists) {
@@ -368,59 +354,29 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($pageDataType, 'meta_description');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => 'meta_description',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => '',
-                'order'        => 7,
-            ])->save();
-        }
 
-        $dataRow = $this->dataRow($pageDataType, 'meta_keywords');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => 'meta_keywords',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => '',
-                'order'        => 8,
-            ])->save();
-        }
 
-        $dataRow = $this->dataRow($pageDataType, 'status');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'select_dropdown',
-                'display_name' => 'Статус',
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => json_encode([
-                    'default' => 'INACTIVE',
-                    'options' => [
-                        'INACTIVE' => 'INACTIVE',
-                        'ACTIVE'   => 'ACTIVE',
-                    ],
-                ]),
-                'order' => 9,
-            ])->save();
-        }
+//        $dataRow = $this->dataRow($pageDataType, 'status');
+//        if (!$dataRow->exists) {
+//            $dataRow->fill([
+//                'type'         => 'select_dropdown',
+//                'display_name' => 'Статус',
+//                'required'     => 1,
+//                'browse'       => 1,
+//                'read'         => 1,
+//                'edit'         => 1,
+//                'add'          => 1,
+//                'delete'       => 1,
+//                'details'      => json_encode([
+//                    'default' => 'INACTIVE',
+//                    'options' => [
+//                        'INACTIVE' => 'INACTIVE',
+//                        'ACTIVE'   => 'ACTIVE',
+//                    ],
+//                ]),
+//                'order' => 9,
+//            ])->save();
+//        }
 
         $dataRow = $this->dataRow($pageDataType, 'created_at');
         if (!$dataRow->exists) {
@@ -454,21 +410,7 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($pageDataType, 'image');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'image',
-                'display_name' => 'Зображення',
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => '',
-                'order'        => 12,
-            ])->save();
-        }
+
 
         $dataRow = $this->dataRow($userDataType, 'id');
         if (!$dataRow->exists) {
