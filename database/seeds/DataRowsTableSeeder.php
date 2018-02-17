@@ -356,28 +356,6 @@ class DataRowsTableSeeder extends Seeder
 
 
 
-//        $dataRow = $this->dataRow($pageDataType, 'status');
-//        if (!$dataRow->exists) {
-//            $dataRow->fill([
-//                'type'         => 'select_dropdown',
-//                'display_name' => 'Статус',
-//                'required'     => 1,
-//                'browse'       => 1,
-//                'read'         => 1,
-//                'edit'         => 1,
-//                'add'          => 1,
-//                'delete'       => 1,
-//                'details'      => json_encode([
-//                    'default' => 'INACTIVE',
-//                    'options' => [
-//                        'INACTIVE' => 'INACTIVE',
-//                        'ACTIVE'   => 'ACTIVE',
-//                    ],
-//                ]),
-//                'order' => 9,
-//            ])->save();
-//        }
-
         $dataRow = $this->dataRow($pageDataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([

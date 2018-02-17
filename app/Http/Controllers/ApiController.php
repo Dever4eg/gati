@@ -21,15 +21,7 @@ class ApiController extends Controller
     }
 
     public function schedules() {
-        $schedules = Schedule::where('date', '>=', date("Y-m-d", strtotime('-2 days')))
-            ->orderBy('date', 'asc')
-            ->limit(5)
-            ->get();
-
-        $schedules = $schedules->isEmpty() ? $schedules = Schedule::orderBy('date', 'asc')->limit(5)->get() : $schedules;
-
-        return response()->json($schedules);
-
+        return response()->json(Schedule::getLastFiveSchedules());
     }
 
     public function schedule($slug) {
@@ -39,7 +31,7 @@ class ApiController extends Controller
     }
 
     public function scheduleTypes() {
-        return ScheduleType::orderBy('created_at', 'desc')->paginate(10);
+        return ScheduleType::orderBy('created_at', 'desc')->get();
     }
 
     public function scheduleType($id) {
