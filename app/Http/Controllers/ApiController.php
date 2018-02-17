@@ -21,7 +21,15 @@ class ApiController extends Controller
     }
 
     public function schedules() {
-        return Schedule::orderBy('created_at', 'desc')->paginate(10);
+        $schedules = Schedule::where('date', '>=', date("Y-m-d", strtotime('-2 days')))
+            ->orderBy('date', 'asc')
+            ->limit(5)
+            ->get();
+
+        $schedules = $schedules->isEmpty() ? $schedules = Schedule::orderBy('date', 'asc')->limit(5)->get() : $schedules;
+
+        return response()->json($schedules);
+
     }
 
     public function schedule($slug) {

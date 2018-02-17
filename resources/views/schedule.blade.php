@@ -2,21 +2,23 @@
 
 @section('content')
 
-    <!-- <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad4.png" alt="">
-    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad3.png" alt="">
-    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad2.png" alt="">
-    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad1.png" alt="">
-    <img class="img-responsive" src="http://gatisnau.sumy.ua/images/rozklad/rozklad.png" alt="">
- -->
 
 
-    @forelse($schedules as $item)
-     <h2 class="text-center"> {{ $item->type->type_name }} : {{ $item->date }} </h2>
-        <img class="img-responsive" src="{{ Storage::url($item->path_img) }}" alt="">
-    @empty
-        <h3>Записи отсутствуют</h3>
-    @endforelse
+    <ul class="nav nav-tabs schedule-tabs">
+        @foreach($schedules as $key=>$item)
+            <li class="{{ $key==0?'active':'' }}"><a data-toggle="tab" href="#tab{{$key}}">{{$item->date}}</a></li>
+        @endforeach
+    </ul>
 
-    {{ $schedules->links() }}
+    <div class="tab-content">
+        @foreach($schedules as $key=>$item)
+            <div id="tab{{$key}}" class="tab-pane fade {{ $key==0?'in active':'' }}">
+                <h3>{{ $item->type->type_name }}</h3>
+                <img class="img-responsive" src="{{ Storage::url($item->path_img) }}" alt="">
+            </div>
+        @endforeach
+    </div>
+
+    <div style="padding-bottom: 20px"></div>
 
 @endsection

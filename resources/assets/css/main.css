@@ -47,6 +47,7 @@
     border-color: red;
 }
 
+
 .dropdown-menu{
     background: #2E8B57;
     border: none;
@@ -155,4 +156,11 @@ footer {
 .pagination>.active>span:hover {
     background: #2E8B57;
     border-color: #2E8B57;
+}
+
+
+.schedule-tabs a {
+    background: #2E8B57;
+    border: none;
+    color: #fff;
 }

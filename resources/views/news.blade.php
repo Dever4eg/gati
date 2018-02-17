@@ -13,7 +13,7 @@
                     {{ $item->excerpt }}
                 </div>
                 <div class="clearfix"></div>
-                <div>
+                <div class="col-md-12">
                     <a href="/news/{{$item->id}}" class="btn pull-right">Переглянути</a>
                 </div>
             </div>

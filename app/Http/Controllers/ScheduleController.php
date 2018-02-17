@@ -9,7 +9,13 @@ use Illuminate\Http\Request;
 class ScheduleController extends Controller
 {
     public function index() {
-        $schedules = Schedule::orderBy('date', 'desc')->paginate(5);
+        $schedules = Schedule::where('date', '>=', date("Y-m-d", strtotime('-2 days')))
+            ->orderBy('date', 'asc')
+            ->limit(5)
+            ->get();
+
+        $schedules = $schedules->isEmpty() ? $schedules = Schedule::orderBy('date', 'asc')->limit(5)->get() : $schedules;
+
         $types = ScheduleType::all();
 
         return view('schedule',compact('schedules', 'types'));
