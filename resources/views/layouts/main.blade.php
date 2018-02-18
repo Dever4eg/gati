@@ -7,6 +7,9 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
+	<meta name="theme-color" content="#9CC2CE">
+
+
 	<title> @yield('title') </title>
 
     <meta Name="description" content="Офіційний сайт Глухівського інституту імені С.А. Ковпака СНАУ">

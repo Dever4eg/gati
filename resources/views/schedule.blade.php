@@ -5,18 +5,19 @@
 
     <ul class="nav nav-tabs schedule-tabs">
         @foreach($dates as $key=>$items)
-            <li class="{{ $items['active'] ? 'in active' : '' }}"><a data-toggle="tab" href="#tab{{$key}}">{{$key}}</a></li>
+            <li class="{{ '' }}"><a data-toggle="tab" href="#tab{{$key}}">{{$key}}</a></li>
         @endforeach
     </ul>
 
     <div class="tab-content">
         @foreach($dates as $key=>$items)
-            <div id="tab{{$key}}" class="tab-pane fade {{ $items['active'] ? 'in active' : '' }}">
-                @foreach($items as $item)
+            <div id="tab{{$key}}" class="tab-pane fade {{ '' }}">
+
+                @foreach($items as $kye => $item)
+
                     <h3>{{ $item['type'] }}</h3>
                     <img class="img-responsive" src="{{ Storage::url($item['image']) }}" alt="">
                 @endforeach
-
             </div>
         @endforeach
     </div>

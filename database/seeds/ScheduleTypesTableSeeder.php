@@ -15,6 +15,7 @@ class ScheduleTypesTableSeeder extends Seeder
         if (!$type->exists) {
             $type->fill([
                 'type_name'        => "Денна",
+                'order'            => 1,
             ])->save();
         }
 
@@ -22,6 +23,7 @@ class ScheduleTypesTableSeeder extends Seeder
         if (!$type->exists) {
             $type->fill([
                 'type_name'        => "Заочна",
+                'order'            => 2,
             ])->save();
         }
     }

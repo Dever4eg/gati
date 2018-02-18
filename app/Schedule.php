@@ -39,8 +39,12 @@ class Schedule extends Model
                 'image' => $item->path_img,
             ];
 
-            $dates[$item->date]['active'] = false;
+            ksort($dates[$item->date]);
+
+            //$dates[$item->date]['active'] = false;
         }
+
+        //dd($dates);
 
         return $dates;
     }

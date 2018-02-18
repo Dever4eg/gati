@@ -893,6 +893,23 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+
+        $dataRow = $this->dataRow($scheduleTypeDataType, 'order');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => 'Порядок',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($scheduleTypeDataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -905,7 +922,7 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 3,
+                'order'        => 4,
             ])->save();
         }
 
@@ -921,7 +938,7 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 4,
+                'order'        => 5,
             ])->save();
         }
 
@@ -938,7 +955,7 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 5,
+                'order'        => 6,
             ])->save();
         }
 
