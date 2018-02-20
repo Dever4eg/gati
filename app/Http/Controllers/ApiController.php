@@ -21,7 +21,7 @@ class ApiController extends Controller
     }
 
     public function schedules() {
-        return response()->json(Schedule::getLastFiveSchedules());
+        return response()->json(['curve' => Schedule::getLastFiveSchedules()]);
     }
 
     public function schedule($slug) {

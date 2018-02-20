@@ -26,8 +26,14 @@ class Schedule extends Model
             $dates = self::SchedulesToDates($schedules);
         }
 
-        return $dates;
+        return $schedules;
     }
+
+    public static function getLastFiveDates() {
+        return self::SchedulesToDates(self::getLastFiveSchedules());
+    }
+
+
 
     // тут не сильно лучше
     protected static function SchedulesToDates($schedules) {
