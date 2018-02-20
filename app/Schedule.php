@@ -6,52 +6,81 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
+
     public function Type(){
         return $this->belongsTo('App\ScheduleType', 'schedule_types_id')
-            ->withTrashed();
+          ->withTrashed();
     }
 
 
-    //Тут дикий говнокод
-    public static function getLastFiveSchedules() {
-        $schedules = self::where('date', '>=', date("Y-m-d", strtotime('-2 days')))
-            ->orderBy('date', 'asc')
-            //->limit(5)
-            ->get();
 
-        $dates = self::SchedulesToDates($schedules);
+    public static function getLast(){
+         // Возвращает все что позже текущей даты -2
+         $schedules = Schedule::with('type')
+             ->where('date', '>=', date("Y-m-d", strtotime('-2 days')))
+             ->limit(5*ScheduleType::all()->count())
+             ->orderBy('date', 'desk')
+             ->get();
 
-        if(count($dates) <5) {
-            $schedules = self::orderBy('date', 'asc')->limit(5*ScheduleType::all()->count())->get();
-            $dates = self::SchedulesToDates($schedules);
-        }
+        // Если предыдущая вернула < 5 то взять последние 5
+        if(self::CountDates($schedules) < 5)
+            $schedules = Schedule::with('type')
+                ->limit(5*ScheduleType::all()->count())
+                ->orderBy('date', 'desk')
+                ->get();
+
 
         return $schedules;
     }
 
-    public static function getLastFiveDates() {
-        return self::SchedulesToDates(self::getLastFiveSchedules());
-    }
+    public static function GetLastFiveArray() {
+
+        $result = self::ConvertToArray(self::GetLast());      
+        $result = array_slice($result,0,5);
+        ksort($result);
 
 
-
-    // тут не сильно лучше
-    protected static function SchedulesToDates($schedules) {
-        $dates = [];
-
-        foreach($schedules as $item) {
-            $dates[$item->date][] = [
-                'type' => $item->type->type_name,
-                'image' => $item->path_img,
-            ];
-
-            ksort($dates[$item->date]);
-
-            //$dates[$item->date]['active'] = false;
+        //Установка актиного(тот который отображается по умолчанию)
+        $isSetDefault = false;
+        if(date('H') < 17 && isset($result[date("Y-m-d")])){
+            $result['default'] = date("Y-m-d");
+            $isSetDefault = true;
+        } else {
+            foreach (array_keys($result) as $date) {
+                if($date > date("Y-m-d")){
+                    $result['default'] = $date;
+                    $isSetDefault = true;
+                    break;
+                }
+            }
+        }
+        if(!$isSetDefault) {
+            end($result);
+            $result['default'] = key($result);
+            $isSetDefault = true;
         }
 
-        //dd($dates);
-
-        return $dates;
+      return $result;
     }
+
+
+
+    protected static function ConvertToArray($schedules) {
+      $result = [];
+      foreach ($schedules as $item) {
+          $result[$item->date][$item->type->order . $item->type->type_name] = $item;
+          ksort($result[$item->date]);
+      }
+
+      return $result;
+    }
+
+    protected static function CountDates ($schedules) {
+      $result = [];
+      foreach ($schedules as $item) {
+          $result[$item->date] = true;
+      }
+      return count($result);
+    }
+
 }
